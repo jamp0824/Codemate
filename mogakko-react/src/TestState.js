@@ -1,5 +1,7 @@
-import { useState } from "react";
-import style from "./Contents.module.css";
+import React, { useState } from "react";
+import Button from "./components/Button";
+import Layout from "./Layout";
+import Number from "./components/Number";
 
 function TestState() {
   const [number, setNumber] = useState(0);
@@ -15,20 +17,15 @@ function TestState() {
   function multipleTwo() {
     setNumber(number * 2);
   }
+
   console.log(number);
   return (
-    <>
-      <div>값{number}</div>
-      <button className={style.buttonStyle} onClick={plusOne}>
-        +1
-      </button>
-      <button className={style.buttonStyle} onClick={minusOne}>
-        -1
-      </button>
-      <button className={style.buttonStyle} onClick={multipleTwo}>
-        *2
-      </button>
-    </>
+    <Layout>
+      <Number number={number} />
+      <Button onClick={plusOne} text="+1" />
+      <Button onClick={minusOne} text="-1" />
+      <Button onClick={multipleTwo} text="*2" />
+    </Layout>
   );
 }
 export default TestState;
