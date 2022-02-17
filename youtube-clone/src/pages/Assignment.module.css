@@ -1,0 +1,23 @@
+.container {
+    background-color:red;
+    width:500px;
+    text-align: center;
+    font-size: medium;
+  }
+  .container2 {
+    background-color:blue;
+    width:500px;
+    text-align: center;
+    font-size: medium;
+  }
+  
+  .layout {
+    margin-top: 300px;
+  
+    flex: 1;
+  }
+  
+  .contents {
+    flex: 1;
+  }
+  

@@ -1,0 +1,22 @@
+.container {
+  color:red;
+  width:50px;
+  text-align: center;
+  font-size: medium;
+}
+.container2 {
+  color:blue;
+  width:50px;
+  text-align: center;
+  font-size: medium;
+}
+
+.layout {
+  margin-top: 300px;
+
+  flex: 1;
+}
+
+.contents {
+  flex: 1;
+}
