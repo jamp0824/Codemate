@@ -1,11 +1,11 @@
-import Layout from "../components/shared/Layout";
 import styles from "./Home.module.css";
-import youtubeData from "../data/youtubeData";
+import Layout from "../components/shared/Layout";
+import youtubeData from "../data/youtubeData.json";
 import HomeFilter from "../components/home/HomeFilter";
 import HomeCard from "../components/home/HomeCard";
 import { useState } from "react";
 
-const target = ["전체", "Music", "Entertainment", "Comedy"];
+const target = ["전체", "BTS", "LISA", "아이폰"];
 
 function Home() {
   const [filter, setFilter] = useState("전체");
@@ -22,8 +22,14 @@ function Home() {
       />
     );
   }
+
   function filterFunc(data) {
-    if (filter === "전체" || data.category === filter) return false;
+    if (
+      filter === "전체" ||
+      data.title.includes(filter) ||
+      data.description.includes(filter)
+    )
+      return true;
     return false;
   }
   return (
