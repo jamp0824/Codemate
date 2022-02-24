@@ -1,3 +1,6 @@
+import moment from "moment";
+import "moment/locale/ko";
+
 function ProcessViewCount(viewCount) {
   if (viewCount < 1000) {
     return `조회수 ${viewCount}회`; // 조회수 100회
@@ -12,4 +15,12 @@ function ProcessViewCount(viewCount) {
   }
 }
 
-export { ProcessViewCount };
+function ProcessUpdateDate(data) {
+  const date = moment(data);
+  const standard = moment("2021-09-16T13:40:02");
+  const result = date.from(standard);
+  console.log("result", result);
+  return `${result}`;
+}
+
+export { ProcessViewCount, ProcessUpdateDate };

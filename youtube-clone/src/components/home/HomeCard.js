@@ -2,6 +2,7 @@ import styles from "./HomeCard.module.css";
 import moment from "moment";
 import "moment/locale/ko";
 import { ProcessViewCount } from "../../utils/index";
+import { ProcessUpdateDate } from "../../utils/index";
 
 function HomeCard(data, index) {
   return (
@@ -30,7 +31,7 @@ function HomeCard(data, index) {
             <div className={styles.view}>
               {ProcessViewCount(data.viewCount)}
             </div>
-            <div className={styles.date}>{moment(data.date).fromNow()}</div>
+            <div className={styles.date}>{ProcessUpdateDate(data.date)}</div>
           </div>
         </div>
       </div>
